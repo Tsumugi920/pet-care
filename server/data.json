@@ -1,0 +1,200 @@
+{
+  "pets": [
+    {
+      "id": "pet-mimi",
+      "name": "咪咪",
+      "species": "猫",
+      "breed": "英国短毛猫",
+      "gender": "母",
+      "birthDate": "2022-03-15",
+      "notes": "爱吃冻干，怕吹风机。已绝育。",
+      "createdAt": "2026-10-01T08:00:00.000Z"
+    },
+    {
+      "id": "pet-wangcai",
+      "name": "旺财",
+      "species": "狗",
+      "breed": "金毛寻回犬",
+      "gender": "公",
+      "birthDate": "2021-06-20",
+      "notes": "精力旺盛，每天早晚各遛一次。已绝育。",
+      "createdAt": "2026-10-01T08:05:00.000Z"
+    },
+    {
+      "id": "pet-mvnus88f-7o8hx",
+      "name": "团子",
+      "species": "兔",
+      "breed": "",
+      "gender": "公",
+      "birthDate": "2026-05-01",
+      "notes": "爱吃提摩西草，胆子小（浏览器主流程测试新增）",
+      "createdAt": "2026-10-25T13:18:10.095Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-f1",
+      "petId": "pet-mimi",
+      "type": "feeding",
+      "date": "2026-10-24",
+      "food": "皇家室内成猫粮",
+      "amount": "45g",
+      "note": "早晚各一顿"
+    },
+    {
+      "id": "rec-f2",
+      "petId": "pet-mimi",
+      "type": "feeding",
+      "date": "2026-10-23",
+      "food": "成猫粮 + 冻干",
+      "amount": "50g",
+      "note": "冻干当零食奖励"
+    },
+    {
+      "id": "rec-f3",
+      "petId": "pet-mimi",
+      "type": "feeding",
+      "date": "2026-10-22",
+      "food": "鸡肉主食罐",
+      "amount": "85g",
+      "note": "吃得很干净"
+    },
+    {
+      "id": "rec-f4",
+      "petId": "pet-wangcai",
+      "type": "feeding",
+      "date": "2026-10-24",
+      "food": "大型犬成犬粮",
+      "amount": "320g",
+      "note": "遛弯回来后喂"
+    },
+    {
+      "id": "rec-f5",
+      "petId": "pet-wangcai",
+      "type": "feeding",
+      "date": "2026-10-23",
+      "food": "犬粮 + 熟鸡胸肉",
+      "amount": "350g",
+      "note": "额外加了100g鸡胸肉"
+    },
+    {
+      "id": "rec-h1",
+      "petId": "pet-mimi",
+      "type": "health",
+      "date": "2026-09-12",
+      "symptom": "频繁打喷嚏、流清鼻涕",
+      "treatment": "口服赖氨酸，三天后好转",
+      "note": "注意保暖，避免昼夜温差"
+    },
+    {
+      "id": "rec-h2",
+      "petId": "pet-wangcai",
+      "type": "health",
+      "date": "2026-08-05",
+      "symptom": "频繁甩头、挠耳道",
+      "treatment": "耳道清洗 + 滴耳液一周，复诊已痊愈",
+      "note": "洗澡后记得擦干耳朵"
+    },
+    {
+      "id": "rec-v1",
+      "petId": "pet-mimi",
+      "type": "vaccine",
+      "date": "2025-11-10",
+      "vaccineName": "猫三联（妙三多）",
+      "nextDueDate": "2026-11-10",
+      "note": ""
+    },
+    {
+      "id": "rec-v2",
+      "petId": "pet-wangcai",
+      "type": "vaccine",
+      "date": "2026-04-02",
+      "vaccineName": "狂犬疫苗",
+      "nextDueDate": "2027-04-02",
+      "note": "社区宠物医院接种"
+    },
+    {
+      "id": "rec-v3",
+      "petId": "pet-wangcai",
+      "type": "vaccine",
+      "date": "2025-09-15",
+      "vaccineName": "犬四联",
+      "nextDueDate": "2026-10-05",
+      "note": ""
+    },
+    {
+      "id": "rec-w1",
+      "petId": "pet-mimi",
+      "type": "weight",
+      "date": "2026-07-05",
+      "weight": 4
+    },
+    {
+      "id": "rec-w2",
+      "petId": "pet-mimi",
+      "type": "weight",
+      "date": "2026-08-05",
+      "weight": 4.15
+    },
+    {
+      "id": "rec-w3",
+      "petId": "pet-mimi",
+      "type": "weight",
+      "date": "2026-09-05",
+      "weight": 4.2
+    },
+    {
+      "id": "rec-w4",
+      "petId": "pet-mimi",
+      "type": "weight",
+      "date": "2026-10-20",
+      "weight": 4.3
+    },
+    {
+      "id": "rec-w5",
+      "petId": "pet-wangcai",
+      "type": "weight",
+      "date": "2026-07-05",
+      "weight": 30.5
+    },
+    {
+      "id": "rec-w6",
+      "petId": "pet-wangcai",
+      "type": "weight",
+      "date": "2026-08-05",
+      "weight": 31
+    },
+    {
+      "id": "rec-w7",
+      "petId": "pet-wangcai",
+      "type": "weight",
+      "date": "2026-09-05",
+      "weight": 30.2
+    },
+    {
+      "id": "rec-w8",
+      "petId": "pet-wangcai",
+      "type": "weight",
+      "date": "2026-10-20",
+      "weight": 31.2
+    },
+    {
+      "id": "rec-mvnur7zy-2duh0",
+      "petId": "pet-wangcai",
+      "type": "feeding",
+      "date": "2026-10-25",
+      "food": "犬粮 + 牛肉罐头",
+      "amount": "330g",
+      "note": "curl 接口测试"
+    },
+    {
+      "id": "rec-mvnutooa-qk1is",
+      "petId": "pet-mvnus88f-7o8hx",
+      "type": "feeding",
+      "date": "2026-10-25",
+      "food": "提摩西草 + 兔粮",
+      "amount": "80g",
+      "note": "浏览器主流程测试：喂食正常"
+    }
+  ]
+}
