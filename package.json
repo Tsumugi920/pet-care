@@ -1,0 +1,16 @@
+{
+  "name": "pet-care",
+  "version": "1.0.0",
+  "description": "pet-care 宠物养护记录：Node + Express 后端 REST API，数据持久化到 server/data.json，原生 HTML/CSS/JS 前端",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "license": "MIT"
+}
