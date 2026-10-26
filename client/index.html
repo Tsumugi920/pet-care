@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>pet-care 宠物养护记录</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <h1>🐾 pet-care 宠物养护记录</h1>
+  <p class="subtitle">记录毛孩子的喂食、健康与疫苗，陪伴它们健康成长</p>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="pets">🐕 宠物档案</button>
+  <button class="tab" data-tab="feeding">🍖 喂食记录</button>
+  <button class="tab" data-tab="health">🩺 健康记录</button>
+  <button class="tab" data-tab="vaccine">💉 疫苗提醒</button>
+  <button class="tab" data-tab="weight">📈 体重曲线</button>
+</nav>
+
+<main>
+
+  <!-- 宠物档案 -->
+  <section id="tab-pets" class="tab-panel active">
+    <div class="card form-card">
+      <h3 id="pet-form-title">➕ 新增宠物</h3>
+      <form id="pet-form">
+        <div class="form-grid">
+          <label>名字 *<input name="name" required placeholder="如：咪咪" /></label>
+          <label>物种 *
+            <select name="species" required>
+              <option value="猫">猫</option>
+              <option value="狗">狗</option>
+              <option value="兔">兔</option>
+              <option value="仓鼠">仓鼠</option>
+              <option value="鸟">鸟</option>
+              <option value="其他">其他</option>
+            </select>
+          </label>
+          <label>品种<input name="breed" placeholder="如：英国短毛猫" /></label>
+          <label>性别
+            <select name="gender">
+              <option value="">未知</option>
+              <option value="公">公</option>
+              <option value="母">母</option>
+            </select>
+          </label>
+          <label>生日<input name="birthDate" type="date" /></label>
+          <label class="full">备注<input name="notes" placeholder="喜好、习惯、绝育情况等（可选）" /></label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">保存</button>
+          <button type="button" class="btn ghost hidden" id="pet-cancel-edit">取消编辑</button>
+        </div>
+      </form>
+    </div>
+    <div class="pet-grid" id="pet-grid"></div>
+  </section>
+
+  <!-- 喂食记录 -->
+  <section id="tab-feeding" class="tab-panel">
+    <div class="card form-card">
+      <h3>🍖 记一次喂食</h3>
+      <form id="feeding-form" class="record-form">
+        <div class="form-grid">
+          <label>宠物<select name="petId" class="pet-select" required></select></label>
+          <label>日期<input name="date" type="date" required /></label>
+          <label>食物<input name="food" required placeholder="如：室内成猫粮" /></label>
+          <label>分量<input name="amount" placeholder="如：45g / 半罐" /></label>
+          <label class="full">备注<input name="note" placeholder="可选" /></label>
+        </div>
+        <div class="form-actions"><button type="submit" class="btn primary">保存喂食记录</button></div>
+      </form>
+    </div>
+    <div class="card">
+      <div class="list-head">
+        <h3>喂食记录</h3>
+        <select class="pet-filter" data-tab="feeding"></select>
+      </div>
+      <div class="record-list" data-tab="feeding" id="feeding-list"></div>
+    </div>
+  </section>
+
+  <!-- 健康记录 -->
+  <section id="tab-health" class="tab-panel">
+    <div class="card form-card">
+      <h3>🩺 新增健康记录</h3>
+      <form id="health-form" class="record-form">
+        <div class="form-grid">
+          <label>宠物<select name="petId" class="pet-select" required></select></label>
+          <label>日期<input name="date" type="date" required /></label>
+          <label>症状<input name="symptom" required placeholder="如：打喷嚏、食欲下降" /></label>
+          <label>处理方式<input name="treatment" placeholder="如：用药、复诊情况" /></label>
+          <label class="full">备注<input name="note" placeholder="可选" /></label>
+        </div>
+        <div class="form-actions"><button type="submit" class="btn primary">保存健康记录</button></div>
+      </form>
+    </div>
+    <div class="card">
+      <div class="list-head">
+        <h3>健康记录</h3>
+        <select class="pet-filter" data-tab="health"></select>
+      </div>
+      <div class="record-list" data-tab="health" id="health-list"></div>
+    </div>
+  </section>
+
+  <!-- 疫苗提醒 -->
+  <section id="tab-vaccine" class="tab-panel">
+    <div class="card reminders-card">
+      <div class="list-head">
+        <h3>⏰ 疫苗到期提醒</h3>
+        <span class="muted" id="reminder-count"></span>
+      </div>
+      <div id="reminder-list"></div>
+    </div>
+    <div class="card form-card">
+      <h3>💉 新增疫苗记录</h3>
+      <form id="vaccine-form" class="record-form">
+        <div class="form-grid">
+          <label>宠物<select name="petId" class="pet-select" required></select></label>
+          <label>接种日期<input name="date" type="date" required /></label>
+          <label>疫苗名称<input name="vaccineName" required placeholder="如：猫三联 / 狂犬疫苗" /></label>
+          <label>下次到期日<input name="nextDueDate" type="date" required /></label>
+          <label class="full">备注<input name="note" placeholder="可选" /></label>
+        </div>
+        <div class="form-actions"><button type="submit" class="btn primary">保存疫苗记录</button></div>
+      </form>
+    </div>
+    <div class="card">
+      <div class="list-head">
+        <h3>疫苗接种记录</h3>
+        <select class="pet-filter" data-tab="vaccine"></select>
+      </div>
+      <div class="record-list" data-tab="vaccine" id="vaccine-list"></div>
+    </div>
+  </section>
+
+  <!-- 体重曲线 -->
+  <section id="tab-weight" class="tab-panel">
+    <div class="card form-card">
+      <h3>⚖️ 记录体重</h3>
+      <form id="weight-form" class="record-form">
+        <div class="form-grid">
+          <label>宠物<select name="petId" class="pet-select" required></select></label>
+          <label>日期<input name="date" type="date" required /></label>
+          <label>体重（kg）<input name="weight" type="number" min="0" step="0.01" required placeholder="如：4.2" /></label>
+        </div>
+        <div class="form-actions"><button type="submit" class="btn primary">保存体重记录</button></div>
+      </form>
+    </div>
+    <div class="card">
+      <div class="list-head">
+        <h3>体重曲线</h3>
+        <select class="pet-filter" data-tab="weight"></select>
+      </div>
+      <div class="chart-wrap"><canvas id="weight-chart"></canvas></div>
+      <div class="legend" id="weight-legend"></div>
+    </div>
+    <div class="card">
+      <div class="list-head"><h3>体重记录</h3></div>
+      <div class="record-list" data-tab="weight" id="weight-list"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">pet-care · 数据保存在 server/data.json · REST API 前缀 /api · 端口 3013</footer>
+
+<div id="toast-box"></div>
+<script src="app.js"></script>
+</body>
+</html>
